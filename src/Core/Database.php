@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Gestion de la connexion PDO (pattern Singleton).
+ *gestion de la connexion PDO (pattern Singleton).
  *
  * @package Klaxon\Core
  */
@@ -14,19 +15,19 @@ use PDOException;
 
 class Database
 {
-    /** @var PDO|null Instance unique */
+    /** @var PDO|null instance unique */
     private static ?PDO $instance = null;
 
     /**
-     * Constructeur privé — empêche l'instanciation directe.
+     *constructeur privé — empêche l'instanciation directe.
      */
     private function __construct() {}
 
     /**
-     * Retourne l'instance PDO unique.
+     *retourne l'instance PDO unique.
      *
      * @return PDO
-     * @throws PDOException Si la connexion échoue.
+     * @throws PDOException si la connexion échoue.
      */
     public static function getInstance(): PDO
     {

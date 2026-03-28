@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Tests unitaires couvrant les opérations d'écriture en base de données.
- * Utilise une base SQLite en mémoire pour l'isolation totale des tests.
+ * tests unitaires couvrant les opérations d'écriture en base de données.
+ * utilise une base SQLite en mémoire pour l'isolation totale des tests.
  *
  * @package Klaxon\Tests
  */
@@ -14,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 use PDO;
 
 /**
- * Remplace le singleton Database pour pointer vers SQLite en mémoire.
+ *remplace le singleton Database pour pointer vers SQLite en mémoire.
  */
 class TestDatabase
 {
@@ -27,7 +28,7 @@ class TestDatabase
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-            // Création du schéma minimal
+            //création du schéma minimal
             $pdo->exec('
                 CREATE TABLE agence (
                     id   INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -57,7 +58,7 @@ class TestDatabase
                 );
             ');
 
-            // Données minimales
+            //données minimales
             $pdo->exec("INSERT INTO agence (nom) VALUES ('Paris'), ('Lyon')");
             $pdo->exec("
                 INSERT INTO utilisateur (nom, prenom, telephone, email, mot_de_passe)
@@ -70,9 +71,7 @@ class TestDatabase
     }
 }
 
-// =====================================================================
-// Versions "testables" des modèles (injectent TestDatabase à la place)
-// =====================================================================
+//versions "testables" des modèles (injectent TestDatabase à la place)
 
 class TestableAgenceModel
 {
@@ -184,9 +183,7 @@ class TestableTrajetModel
     }
 }
 
-// =====================================================================
-// Tests AgenceModel
-// =====================================================================
+//tests AgenceModel
 
 class AgenceModelTest extends TestCase
 {
@@ -237,9 +234,7 @@ class AgenceModelTest extends TestCase
     }
 }
 
-// =====================================================================
-// Tests TrajetModel
-// =====================================================================
+//tests TrajetModel
 
 class TrajetModelTest extends TestCase
 {

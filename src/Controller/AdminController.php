@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Contrôleur du tableau de bord administrateur.
+ *contrôleur du tableau de bord administrateur.
  *
  * @package Klaxon\Controller
  */
@@ -17,7 +18,7 @@ use Klaxon\Model\UtilisateurModel;
 class AdminController extends Controller
 {
     /**
-     * Tableau de bord administrateur.
+     *tableau de bord administrateur.
      */
     public function dashboard(): void
     {
@@ -26,7 +27,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Liste tous les utilisateurs.
+     *liste tous les utilisateurs.
      */
     public function utilisateurs(): void
     {
@@ -36,7 +37,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Liste tous les trajets (admin).
+     *liste tous les trajets (admin).
      */
     public function trajets(): void
     {
@@ -46,7 +47,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Supprime un trajet (admin).
+     *supprime un trajet (admin).
      *
      * @param int $id
      */

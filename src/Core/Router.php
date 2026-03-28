@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Routeur principal de l'application.
- * Dispatche les requêtes vers les contrôleurs appropriés.
+ *routeur principal de l'application.
+ *dispatche les requêtes vers les contrôleurs appropriés.
  *
  * @package Klaxon\Core
  */
@@ -19,25 +19,25 @@ use Klaxon\Controller\AdminController;
 class Router
 {
     /**
-     * Dispatche la requête HTTP vers le bon contrôleur/action.
+     *dispatche la requête HTTP vers le bon contrôleur/action.
      */
     public function dispatch(): void
     {
         $uri    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $method = $_SERVER['REQUEST_METHOD'];
 
-        // Retire le sous-répertoire éventuel
+        //retire le sous-répertoire éventuel
         $base = dirname($_SERVER['SCRIPT_NAME']);
         if ($base !== '/' && $base !== '\\') {
             $uri = substr($uri, strlen($base));
         }
         $uri = '/' . ltrim($uri, '/');
         match (true) {
-            // --- Accueil ---
+            //accueil
             $uri === '/' && $method === 'GET'
             => (new TrajetController())->index(),
 
-            // --- Auth ---
+            //auth
             $uri === '/connexion' && $method === 'GET'
             => (new AuthController())->showLogin(),
             $uri === '/connexion' && $method === 'POST'
@@ -45,7 +45,7 @@ class Router
             $uri === '/deconnexion'
             => (new AuthController())->logout(),
 
-            // --- Trajets ---
+            //trajets 
             $uri === '/trajets/creer' && $method === 'GET'
             => (new TrajetController())->create(),
             $uri === '/trajets/creer' && $method === 'POST'
@@ -57,7 +57,7 @@ class Router
             preg_match('#^/trajets/(\d+)/supprimer$#', $uri, $m) && $method === 'POST'
             => (new TrajetController())->delete((int)$m[1]),
 
-            // --- Admin ---
+            //admin
             $uri === '/admin' && $method === 'GET'
             => (new AdminController())->dashboard(),
             $uri === '/admin/utilisateurs'
@@ -67,7 +67,7 @@ class Router
             preg_match('#^/admin/trajets/(\d+)/supprimer$#', $uri, $m) && $method === 'POST'
             => (new AdminController())->deleteTrajet((int)$m[1]),
 
-            // --- Agences (admin) ---
+            //agences (admin) 
             $uri === '/admin/agences' && $method === 'GET'
             => (new AgenceController())->index(),
             $uri === '/admin/agences/creer' && $method === 'GET'
@@ -86,7 +86,7 @@ class Router
     }
 
     /**
-     * Affiche une page 404.
+     * affiche une page 404.
      */
     private function notFound(): void
     {

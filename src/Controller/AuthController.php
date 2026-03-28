@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Contrôleur gérant l'authentification (connexion / déconnexion).
+ *contrôleur gérant l'authentification (connexion / déconnexion).
  *
  * @package Klaxon\Controller
  */
@@ -15,7 +16,7 @@ use Klaxon\Model\UtilisateurModel;
 class AuthController extends Controller
 {
     /**
-     * Affiche le formulaire de connexion.
+     *affiche le formulaire de connexion.
      */
     public function showLogin(): void
     {
@@ -23,7 +24,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Traite le formulaire de connexion.
+     *traite le formulaire de connexion.
      */
     public function login(): void
     {
@@ -49,7 +50,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Déconnecte l'utilisateur et détruit la session.
+     *déconnecte l'utilisateur et détruit la session.
      */
     public function logout(): void
     {

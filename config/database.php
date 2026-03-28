@@ -1,6 +1,6 @@
 <?php
 /**
- * Configuration de la base de données.
+ *configuration de la base de données.
  *
  * @package Klaxon\Config
  */

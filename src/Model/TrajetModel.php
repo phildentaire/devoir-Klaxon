@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Modèle gérant les trajets de covoiturage.
+ *modèle gérant les trajets de covoiturage.
  *
  * @package Klaxon\Model
  */
@@ -15,7 +15,7 @@ use Klaxon\Core\Model;
 class TrajetModel extends Model
 {
     /**
-     * Retourne les trajets disponibles (places > 0, départ futur), triés par date de départ.
+     *retourne les trajets disponibles (places > 0, départs futur), triés par date de départ.
      *
      * @return array<int, array<string, mixed>>
      */
@@ -42,7 +42,7 @@ class TrajetModel extends Model
     }
 
     /**
-     * Retourne tous les trajets (admin), triés par date de départ.
+     *retourne tous les trajets (admin), triés par date de départ.
      *
      * @return array<int, array<string, mixed>>
      */
@@ -64,7 +64,7 @@ class TrajetModel extends Model
     }
 
     /**
-     * Retourne un trajet complet avec infos utilisateur par son id.
+     * retourne un trajet complet avec infos utilisateur par son id.
      *
      * @param int $id
      * @return array<string, mixed>|null
@@ -89,7 +89,7 @@ class TrajetModel extends Model
     }
 
     /**
-     * Crée un nouveau trajet en base.
+     *crée un nouveau trajet en base.
      *
      * @param array<string, mixed> $data
      * @return int Id du trajet créé.
@@ -116,7 +116,7 @@ class TrajetModel extends Model
     }
 
     /**
-     * Met à jour un trajet existant.
+     *met à jour un trajet existant.
      *
      * @param int                  $id
      * @param array<string, mixed> $data
@@ -145,7 +145,7 @@ class TrajetModel extends Model
     }
 
     /**
-     * Supprime un trajet par son id.
+     *supprime un trajet par son id.
      *
      * @param int $id
      */
