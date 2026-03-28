@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Modèle gérant les utilisateurs.
+ *modèle gérant les utilisateurs.
  *
  * @package Klaxon\Model
  */
@@ -14,7 +15,7 @@ use Klaxon\Core\Model;
 class UtilisateurModel extends Model
 {
     /**
-     * Retourne tous les utilisateurs.
+     *retourne tous les utilisateurs.
      *
      * @return array<int, array<string, mixed>>
      */
@@ -24,7 +25,7 @@ class UtilisateurModel extends Model
     }
 
     /**
-     * Recherche un utilisateur par email.
+     *recherche un utilisateur par email.
      *
      * @param string $email
      * @return array<string, mixed>|null

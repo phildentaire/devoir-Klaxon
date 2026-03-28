@@ -4,17 +4,17 @@ Application de covoiturage inter-sites développée en PHP avec architecture MVC
 
 ---
 
-## Fonctionnalités
+## Fonctionnalités :
 
-- **Page d'accueil** : liste des trajets disponibles (places restantes, départ futur), triée par date croissante
-- **Utilisateur connecté** : voir les détails d'un trajet (modale), proposer / modifier / supprimer ses propres trajets
-- **Administrateur** : gestion complète des trajets, utilisateurs et agences (CRUD)
+- **Page d'accueil** : liste des trajets disponibles (places restantes, départ futur), triée par date croissante.
+- **Utilisateur connecté** : voir les détails d'un trajet (modale), proposer / modifier / supprimer ses propres trajets.
+- **Administrateur** : gestion complète des trajets, utilisateurs et agences (CRUD).
 
 ---
 
-## Stack technique
+## Stack technique :
 
-| Élément       | Choix                          |
+| Élément       | Choix                         |
 |---------------|-------------------------------|
 | Langage       | PHP 8.1+                      |
 | Architecture  | MVC maison (sans framework)   |
@@ -26,7 +26,7 @@ Application de covoiturage inter-sites développée en PHP avec architecture MVC
 
 ---
 
-## Prérequis
+## Prérequis :
 
 - PHP ≥ 8.1 avec extensions `pdo`, `pdo_mysql`
 - MySQL ou MariaDB
@@ -35,28 +35,28 @@ Application de covoiturage inter-sites développée en PHP avec architecture MVC
 
 ---
 
-## Installation
+## Installation :
 
-### 1. Cloner le dépôt
+### 1. Cloner le dépôt :
 
 ```bash
 git clone https://github.com/votre-user/klaxon.git
 cd klaxon
 ```
 
-### 2. Installer les dépendances
+### 2. Installer les dépendances :
 
 ```bash
 composer install
 ```
 
-### 3. Créer et alimenter la base de données
+### 3. Créer et alimenter la base de données :
 
 ```bash
 mysql -u root -p < klaxon_db.sql
 ```
 
-### 4. Configurer la base de données
+### 4. Configurer la base de données :
 
 Éditer `config/database.php` :
 
@@ -70,7 +70,7 @@ return [
 ];
 ```
 
-### 5. Configurer Apache
+### 5. Configurer Apache :
 
 Le document root doit pointer sur le dossier `public/` :
 
@@ -93,13 +93,13 @@ a2enmod rewrite
 systemctl restart apache2
 ```
 
-### 6. Lancer l'application
+### 6. Lancer l'application :
 
 Accéder à `http://klaxon.local` dans votre navigateur.
 
 ---
 
-## Comptes de test
+## Comptes de test :
 
 | Rôle          | Email                      | Mot de passe |
 |---------------|---------------------------|--------------|
@@ -110,7 +110,7 @@ Accéder à `http://klaxon.local` dans votre navigateur.
 
 ---
 
-## Lancer les tests PHPUnit
+## Lancer les tests PHPUnit :
 
 ```bash
 vendor/bin/phpunit
@@ -120,7 +120,7 @@ Les tests couvrent les opérations d'écriture en base (create, update, delete) 
 
 ---
 
-## Lancer PHPStan (analyse statique)
+## Lancer PHPStan (analyse statique) :
 
 ```bash
 vendor/bin/phpstan analyse src --level=5
@@ -128,7 +128,7 @@ vendor/bin/phpstan analyse src --level=5
 
 ---
 
-## Structure du projet
+## Structure du projet :
 
 ```
 klaxon/
@@ -164,13 +164,15 @@ klaxon/
 │   └── ModelTest.php         # Tests PHPUnit
 ├── klaxon_db.sql             # Script BDD (création + données)
 ├── composer.json
+├── phpstan-boostrap.php
+├── phpstan.neon
 ├── phpunit.xml
 └── README.md
 ```
 
 ---
 
-## Palette de couleurs
+## Palette de couleurs :
 
 | Couleur      | Hex       | Usage               |
 |-------------|-----------|---------------------|
@@ -183,7 +185,7 @@ klaxon/
 
 ---
 
-## MLD (Modèle Logique de Données)
+## MLD (Modèle Logique de Données) :
 
 ```
 UTILISATEUR (id, nom, prenom, telephone, email, mot_de_passe, est_admin)
@@ -193,6 +195,6 @@ TRAJET (id, #utilisateur_id, #agence_depart_id, #agence_arrivee_id, gdh_depart, 
 
 ---
 
-## Auteur
+## Auteur :
 
-Développé dans le cadre d'un exercice pédagogique — Centre Européen de Formation.
+Développé par Phild Revel dans le cadre d'un exercice pédagogique issu du Centre Européen de Formation.

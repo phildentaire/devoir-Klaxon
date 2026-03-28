@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Contrôleur gérant les trajets de covoiturage.
+ *contrôleur gérant les trajets de covoiturage.
  *
  * @package Klaxon\Controller
  */
@@ -16,7 +17,7 @@ use Klaxon\Model\AgenceModel;
 class TrajetController extends Controller
 {
     /**
-     * Page d'accueil — liste des trajets disponibles.
+     *page d'accueil — liste des trajets disponibles.
      */
     public function index(): void
     {
@@ -27,7 +28,7 @@ class TrajetController extends Controller
     }
 
     /**
-     * Formulaire de création d'un trajet.
+     *formulaire de création d'un trajet.
      */
     public function create(): void
     {
@@ -37,7 +38,7 @@ class TrajetController extends Controller
     }
 
     /**
-     * Enregistre un nouveau trajet.
+     *enregistre un nouveau trajet.
      */
     public function store(): void
     {
@@ -64,7 +65,7 @@ class TrajetController extends Controller
     }
 
     /**
-     * Formulaire de modification d'un trajet.
+     *formulaire de modification d'un trajet.
      *
      * @param int $id
      */
@@ -83,7 +84,7 @@ class TrajetController extends Controller
     }
 
     /**
-     * Met à jour un trajet existant.
+     *met à jour un trajet existant.
      *
      * @param int $id
      */
@@ -117,7 +118,7 @@ class TrajetController extends Controller
     }
 
     /**
-     * Supprime un trajet.
+     *supprime un trajet.
      *
      * @param int $id
      */
@@ -135,10 +136,10 @@ class TrajetController extends Controller
     }
 
     /**
-     * Valide les données du formulaire trajet.
+     *valide les données du formulaire trajet.
      *
      * @param array<string, mixed> $data
-     * @return array<string, string> Tableau d'erreurs (vide si tout est valide).
+     * @return array<string, string> tableau d'erreurs (vide si tout est valide).
      */
     private function validate(array $data): array
     {

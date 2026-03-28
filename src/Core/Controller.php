@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Contrôleur de base dont héritent tous les contrôleurs.
+ *contrôleur de base dont héritent tous les contrôleurs.
  *
  * @package Klaxon\Core
  */
@@ -12,10 +13,10 @@ namespace Klaxon\Core;
 abstract class Controller
 {
     /**
-     * Affiche une vue en lui passant des données.
+     *affiche une vue en lui passant des données.
      *
      * @param string               $view Chemin relatif de la vue (ex: 'trajet/index')
-     * @param array<string, mixed> $data Variables à extraire dans la vue
+     * @param array<string, mixed> $data variables à extraire dans la vue
      */
     protected function render(string $view, array $data = []): void
     {
@@ -30,7 +31,7 @@ abstract class Controller
     }
 
     /**
-     * Redirige vers une URL.
+     *redirige vers URL.
      *
      * @param string $url URL cible
      */
@@ -41,7 +42,7 @@ abstract class Controller
     }
 
     /**
-     * Vérifie que l'utilisateur est connecté, redirige sinon.
+     *vérifie que l'utilisateur est connecté, redirige sinon...
      */
     protected function requireAuth(): void
     {
@@ -51,7 +52,7 @@ abstract class Controller
     }
 
     /**
-     * Vérifie que l'utilisateur est administrateur, redirige sinon.
+     *vérifie que l'utilisateur est administrateur, redirige sinon...
      */
     protected function requireAdmin(): void
     {

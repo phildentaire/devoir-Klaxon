@@ -1,8 +1,9 @@
 <?php
+
 /**
- * Point d'entrée unique de l'application Touche Pas au Klaxon.
+ *point d'entrée unique de l'application "Touche Pas au Klaxon."
  *
- * @package Klaxon
+ * @package klaxon
  */
 
 declare(strict_types=1);

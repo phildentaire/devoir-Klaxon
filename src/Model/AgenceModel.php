@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Modèle gérant les agences (villes).
+ *modèle gérant les agences (villes).
  *
  * @package Klaxon\Model
  */
@@ -14,7 +15,7 @@ use Klaxon\Core\Model;
 class AgenceModel extends Model
 {
     /**
-     * Retourne toutes les agences triées par nom.
+     *retourne toutes les agences triées par nom.
      *
      * @return array<int, array<string, mixed>>
      */
@@ -24,7 +25,7 @@ class AgenceModel extends Model
     }
 
     /**
-     * Retourne une agence par son id.
+     *retourne une agence par son id.
      *
      * @param int $id
      * @return array<string, mixed>|null
@@ -38,7 +39,7 @@ class AgenceModel extends Model
     }
 
     /**
-     * Crée une agence.
+     *crée une agence.
      *
      * @param string $nom
      * @return int Id de l'agence créée.
@@ -51,7 +52,7 @@ class AgenceModel extends Model
     }
 
     /**
-     * Met à jour le nom d'une agence.
+     *met à jour le nom d'une agence.
      *
      * @param int    $id
      * @param string $nom
@@ -63,7 +64,7 @@ class AgenceModel extends Model
     }
 
     /**
-     * Supprime une agence.
+     *supprime une agence.
      *
      * @param int $id
      */

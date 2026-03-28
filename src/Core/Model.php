@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Modèle de base dont héritent tous les modèles.
+ *modèle de base dont héritent tous les modèles.
  *
  * @package Klaxon\Core
  */
@@ -13,7 +14,7 @@ use PDO;
 
 abstract class Model
 {
-    /** @var PDO Connexion PDO partagée */
+    /** @var PDO connexion PDO partagée */
     protected PDO $pdo;
 
     public function __construct()

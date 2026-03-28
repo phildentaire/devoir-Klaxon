@@ -1,9 +1,9 @@
 /*
- * app.css — Touche Pas au Klaxon
- * Palette imposée : #f1f8fc | #0074c7 | #00497c | #384050 | #cd2c2e | #82b864
+ * app.css — "Touche Pas au Klaxon"
+ * palette imposée : #f1f8fc | #0074c7 | #00497c | #384050 | #cd2c2e | #82b864
  */
 
-/* ---- Variables Bootstrap overrides ---- */
+/*variables Bootstrap overrides*/
 :root {
     --bs-primary:        #0074c7;
     --bs-primary-rgb:    0, 116, 199;
@@ -22,12 +22,12 @@ body {
     color: var(--klaxon-slate);
 }
 
-/* ---- Navbar ---- */
+/*navbar*/
 .navbar.bg-primary {
     background-color: var(--bs-primary) !important;
 }
 
-/* ---- Boutons ---- */
+/*boutons*/
 .btn-primary {
     background-color: var(--bs-primary);
     border-color: var(--bs-primary);
@@ -51,7 +51,7 @@ body {
     border-color: var(--bs-danger);
 }
 
-/* ---- Tableau ---- */
+/*tableau*/
 .table-primary {
     background-color: var(--klaxon-dark-blue) !important;
     color: #fff;
@@ -60,7 +60,7 @@ body {
     color: #fff;
 }
 
-/* ---- Cards ---- */
+/*cards*/
 .card {
     border: none;
     border-radius: 0.5rem;
@@ -69,12 +69,12 @@ body {
     background-color: var(--bs-primary) !important;
 }
 
-/* ---- Footer ---- */
+/*footer*/
 .footer {
     background-color: var(--klaxon-slate) !important;
 }
 
-/* ---- Badges ---- */
+/*badges*/
 .badge.bg-success {
     background-color: var(--bs-success) !important;
 }

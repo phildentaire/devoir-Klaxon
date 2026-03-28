@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Contrôleur gérant les agences (réservé à l'administrateur).
+ *contrôleur gérant les agences (réservé à l'administrateur).
  *
  * @package Klaxon\Controller
  */
@@ -15,7 +16,7 @@ use Klaxon\Model\AgenceModel;
 class AgenceController extends Controller
 {
     /**
-     * Liste toutes les agences.
+     *liste toutes les agences.
      */
     public function index(): void
     {
@@ -25,7 +26,7 @@ class AgenceController extends Controller
     }
 
     /**
-     * Formulaire de création d'une agence.
+     *formulaire de création d'une agence.
      */
     public function create(): void
     {
