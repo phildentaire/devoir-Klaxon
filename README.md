@@ -103,10 +103,10 @@ Accéder à `http://klaxon.local` dans votre navigateur.
 
 | Rôle          | Email                      | Mot de passe |
 |---------------|---------------------------|--------------|
-| Administrateur | `admin@klaxon.fr`         | `Password1!` |
-| Utilisateur    | `alexandre.martin@email.fr` | `Password1!` |
+| Administrateur | `admin@klaxon.fr`         | `password` |
+| Utilisateur    | `alexandre.martin@email.fr` | `password` |
 
-> Le mot de passe par défaut de tous les employés importés est `Password1!`.
+> Le mot de passe par défaut de tous les employés importés est `password`.
 
 ---
 
