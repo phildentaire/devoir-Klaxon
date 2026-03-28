@@ -1,0 +1,80 @@
+/*
+ * app.css — Touche Pas au Klaxon
+ * Palette imposée : #f1f8fc | #0074c7 | #00497c | #384050 | #cd2c2e | #82b864
+ */
+
+/* ---- Variables Bootstrap overrides ---- */
+:root {
+    --bs-primary:        #0074c7;
+    --bs-primary-rgb:    0, 116, 199;
+    --bs-secondary-rgb:  56, 64, 80;
+    --bs-danger:         #cd2c2e;
+    --bs-danger-rgb:     205, 44, 46;
+    --bs-success:        #82b864;
+    --bs-success-rgb:    130, 184, 100;
+    --klaxon-dark-blue:  #00497c;
+    --klaxon-slate:      #384050;
+    --klaxon-light:      #f1f8fc;
+}
+
+body {
+    background-color: var(--klaxon-light);
+    color: var(--klaxon-slate);
+}
+
+/* ---- Navbar ---- */
+.navbar.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+/* ---- Boutons ---- */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.btn-primary:hover {
+    background-color: var(--klaxon-dark-blue);
+    border-color: var(--klaxon-dark-blue);
+}
+.btn-success {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+    color: #fff;
+}
+.btn-success:hover {
+    background-color: #6aa050;
+    border-color: #6aa050;
+    color: #fff;
+}
+.btn-danger {
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+
+/* ---- Tableau ---- */
+.table-primary {
+    background-color: var(--klaxon-dark-blue) !important;
+    color: #fff;
+}
+.table-primary th {
+    color: #fff;
+}
+
+/* ---- Cards ---- */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+}
+.card-header.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+/* ---- Footer ---- */
+.footer {
+    background-color: var(--klaxon-slate) !important;
+}
+
+/* ---- Badges ---- */
+.badge.bg-success {
+    background-color: var(--bs-success) !important;
+}

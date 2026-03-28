@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"Klaxon\\Tests\\AgenceModelTest::testCreateAgence":0.009,"Klaxon\\Tests\\AgenceModelTest::testUpdateAgence":0,"Klaxon\\Tests\\AgenceModelTest::testDeleteAgence":0,"Klaxon\\Tests\\AgenceModelTest::testFindAllReturnsArray":0.001}}
