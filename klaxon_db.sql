@@ -1,21 +1,20 @@
--- ============================================================
--- TOUCHE PAS AU KLAXON — Script de création de la base de données
--- ============================================================
+
+-- TOUCHE PAS AU KLAXON : Script de création de la base de données
 
 CREATE DATABASE IF NOT EXISTS klaxon CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE klaxon;
 
--- ============================================================
+
 -- TABLE : agence
--- ============================================================
+
 CREATE TABLE agence (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL UNIQUE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
+
 -- TABLE : utilisateur
--- ============================================================
+
 CREATE TABLE utilisateur (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL,
@@ -26,9 +25,9 @@ CREATE TABLE utilisateur (
     est_admin TINYINT(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
+
 -- TABLE : trajet
--- ============================================================
+
 CREATE TABLE trajet (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     utilisateur_id INT UNSIGNED NOT NULL,
@@ -47,19 +46,19 @@ CREATE TABLE trajet (
     CONSTRAINT chk_agences CHECK (agence_depart_id <> agence_arrivee_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
+
 -- DONNÉES : agences (issues du fichier agences.txt)
--- ============================================================
+
 INSERT INTO agence (nom) VALUES
     ('Paris'), ('Lyon'), ('Marseille'), ('Toulouse'), ('Nice'),
     ('Nantes'), ('Strasbourg'), ('Montpellier'), ('Bordeaux'),
     ('Lille'), ('Rennes'), ('Reims');
 
--- ============================================================
+
 -- DONNÉES : utilisateurs (issues du fichier users.txt)
--- Mot de passe par défaut : Password1! (hashé en bcrypt)
--- Hash généré : password_hash('Password1!', PASSWORD_BCRYPT)
--- ============================================================
+-- Mot de passe par défaut : password (hashé en bcrypt)
+-- Hash généré : password_hash( password', PASSWORD_BCRYPT)
+
 INSERT INTO utilisateur (nom, prenom, telephone, email, mot_de_passe, est_admin) VALUES
     ('Martin',    'Alexandre', '0612345678', 'alexandre.martin@email.fr',  '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0),
     ('Dubois',    'Sophie',    '0698765432', 'sophie.dubois@email.fr',     '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0),
@@ -81,14 +80,14 @@ INSERT INTO utilisateur (nom, prenom, telephone, email, mot_de_passe, est_admin)
     ('Lambert',   'Hugo',      '0611223366', 'hugo.lambert@email.fr',      '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0),
     ('Masson',    'Julie',     '0733445566', 'julie.masson@email.fr',      '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0),
     ('Henry',     'Arthur',    '0666554433', 'arthur.henry@email.fr',      '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0),
-    -- Compte administrateur
+    --Compte administrateur
     ('Admin',     'Admin',     '0600000000', 'admin@klaxon.fr',            '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1);
 
--- ============================================================
+
 -- DONNÉES : trajets (jeu d'essais)
 -- IDs agences : Paris=1, Lyon=2, Marseille=3, Toulouse=4, Nice=5
 --               Nantes=6, Strasbourg=7, Montpellier=8, Bordeaux=9, Lille=10
--- ============================================================
+
 INSERT INTO trajet (utilisateur_id, agence_depart_id, agence_arrivee_id, gdh_depart, gdh_arrivee, nb_places_total, nb_places_dispo) VALUES
     (1,  1, 2,  '2026-04-10 08:00:00', '2026-04-10 12:00:00', 4, 3),
     (2,  2, 3,  '2026-04-11 09:00:00', '2026-04-11 14:00:00', 3, 2),
